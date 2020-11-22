@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t andreic/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run andreic/docker-react npm run test -- --coverage
+ 
